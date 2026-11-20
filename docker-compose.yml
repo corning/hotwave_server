@@ -1,0 +1,18 @@
+services:
+  server:
+    build: .
+    container_name: hotwave-server
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      # 容器内需监听 0.0.0.0 才能被端口映射访问；
+      # 直接部署在主机上时请保持默认 127.0.0.1，由反向代理对外终结 TLS。
+      BIND_HOST: 0.0.0.0
+      HOTWAVE_WS_HOST: 0.0.0.0
+      DATABASE_PATH: /app/database/hotwave.db
+    ports:
+      - "8000:8000"   # REST / SSE（APP 与 hotwave 数据端点）
+      - "18791:18791" # hotwave 反向长连接（WS）
+    volumes:
+      - ./database:/app/database
+      - ./public/uploads:/app/public/uploads

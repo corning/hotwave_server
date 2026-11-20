@@ -1,0 +1,26 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# 本地配置与密钥
+.env
+.env.*
+!.env.example
+
+# 运行期数据：绝不提交（含用户手机号、聊天、交易与上传文件）
+database/
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+*.db.bak*
+public/uploads/
+persistent/
+
+# 系统与编辑器
+.DS_Store
+*.log
+*.pid
+.idea/
+.vscode/

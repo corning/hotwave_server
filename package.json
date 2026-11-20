@@ -1,0 +1,44 @@
+{
+  "name": "hotwave-server",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "HotWave Server — HotWave 金融 Agent 的平台服务端：行情聚合、会话/交易落库、监控上行与 APP 接口",
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corning/hotwave_server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/corning/hotwave_server/issues"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs dev",
+    "build": "next build",
+    "start": "node scripts/dev.mjs start",
+    "seed": "tsx src/lib/seed.ts",
+    "create-user": "tsx src/lib/create-user.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "13.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "next": "^14.2.21",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^20.17.0",
+    "@types/react": "^18.3.12",
+    "@types/ws": "^8.5.13",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
